@@ -17,10 +17,9 @@ Before you begin, make sure you have the following prerequisites installed:
 - Python 3.x
 - PyTorch
 - ONNX
-- NVIDIA GPU with TensorRT installed
-- CMake
-- C++ Compiler
-- NvInfer (part of TensorRT)
+- CUDA
+- TensorRT
+
 
 ## Getting Started
 
