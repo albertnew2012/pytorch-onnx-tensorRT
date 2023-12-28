@@ -32,4 +32,38 @@ Before you begin, ensure that you have the following prerequisites installed:
    python3 ./scripts/simpleCNN_gpu.py
 <a name="conversion-steps"></a>
 ## Conversion Steps
+The conversion process involves the following steps:
+
+1. Export PyTorch Model to ONNX format: This step converts your PyTorch model to the ONNX format, which is compatible with TensorRT.
+   ```bash
+   /usr/src/tensorrt/bin/trtexec --onnx=./simple_cnn.onnx --saveEngine=./simple_cnn.engine 
+2. Build the C++ Inference Code: Set up the C++ environment for running the TensorRT inference. Build the C++ code using CMake.
+
+3. Generate TensorRT Engine: Use the C++ code to generate a TensorRT engine from the ONNX model.
+
+
+<a name="running-the-inference"></a>
+## Running the Inference
+
+1. Navigate to the src directory
+   ```bash
+   cd src
+2. Create a build directory and build the C++ code
+   ```bash
+   mkdir build && cd build
+   cmake ..
+   make
+3. Run the TensorRT inference
+   ```bash
+   ./tensorrt_inference
+This program will load the TensorRT engine, perform inference on the MNIST dataset, and display the results.
+
+<a name="references"></a>
+## References
+- PyTorch
+- ONNX
+- NVIDIA CUDA Toolkit
+- NVIDIA TensorRT
+
+
 
